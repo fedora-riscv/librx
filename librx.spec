@@ -1,7 +1,10 @@
+%define dist .fc4
+%define fedora 4
+
 Summary: POSIX regexp functions
 Name: librx
 Version: 1.5
-Release: 1
+Release: 2%{?dist}
 License: GPL
 URL: http://www.gnu.org/software/rx/rx.html
 Group: Applications/Text
@@ -78,5 +81,8 @@ fi
 %{_libdir}/*.a
 
 %changelog
+* Sun Apr 24 2005 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-2
+- use dist tag
+
 * Sat Apr 23 2005 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-1
 - new package, based on Alexey Voinov's package from AltLinux
