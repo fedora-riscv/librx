@@ -4,7 +4,7 @@
 Summary: POSIX regexp functions
 Name: librx
 Version: 1.5
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: GPL
 URL: http://www.gnu.org/software/rx/rx.html
 Group: Applications/Text
@@ -12,6 +12,7 @@ Source0: ftp://ftp.gnu.org/gnu/rx/rx-%{version}.tar.bz2
 Patch0: rx-1.5-shared.patch
 Patch1: rx-1.5-texinfo.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+BuildRequires: texinfo
 
 %description
 Rx is, among other things, an implementation of the interface
@@ -81,6 +82,9 @@ fi
 %{_libdir}/*.a
 
 %changelog
+* Thu May  5 2005 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-3
+- add BuildRequires: texinfo
+
 * Sun Apr 24 2005 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-2
 - use dist tag
 
