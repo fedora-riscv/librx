@@ -4,13 +4,14 @@
 Summary: POSIX regexp functions
 Name: librx
 Version: 1.5
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: GPL
 URL: http://www.gnu.org/software/rx/rx.html
 Group: Applications/Text
 Source0: ftp://ftp.gnu.org/gnu/rx/rx-%{version}.tar.bz2
 Patch0: rx-1.5-shared.patch
 Patch1: rx-1.5-texinfo.patch
+Patch2: librx-1.5-libdir64.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: texinfo
 
@@ -37,6 +38,9 @@ This package contains files needed for development with librx.
 %setup -q -n rx-%{version}
 %patch0 -p1
 %patch1 -p1 -b .texipatch
+%ifarch x86_64 ppc64 sparc64
+%patch2 -p1 -b .64bit
+%endif
 
 %build
 %configure
@@ -82,6 +86,9 @@ fi
 %{_libdir}/*.a
 
 %changelog
+* Sun May  8 2005 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-4
+- Fix 64 bit arches to install to the right libdir
+
 * Thu May  5 2005 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-3
 - add BuildRequires: texinfo
 
