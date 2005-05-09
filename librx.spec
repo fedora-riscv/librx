@@ -1,10 +1,7 @@
-%define dist .fc3
-%define fedora 3
-
 Summary: POSIX regexp functions
 Name: librx
 Version: 1.5
-Release: 4%{?dist}
+Release: 5%{?dist}
 License: GPL
 URL: http://www.gnu.org/software/rx/rx.html
 Group: Applications/Text
@@ -86,6 +83,9 @@ fi
 %{_libdir}/*.a
 
 %changelog
+* Mon May  9 2005 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-5
+- remove hardcoded dist tags
+
 * Sun May  8 2005 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-4
 - Fix 64 bit arches to install to the right libdir
 
