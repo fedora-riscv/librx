@@ -1,7 +1,7 @@
 Summary: POSIX regexp functions
 Name: librx
 Version: 1.5
-Release: 5%{?dist}
+Release: 6%{?dist}
 License: GPL
 URL: http://www.gnu.org/software/rx/rx.html
 Group: Applications/Text
@@ -83,6 +83,9 @@ fi
 %{_libdir}/*.a
 
 %changelog
+* Tue Feb 28 2006 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-6
+- bump for FC-5
+
 * Mon May  9 2005 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-5
 - remove hardcoded dist tags
 
