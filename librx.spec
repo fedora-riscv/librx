@@ -1,7 +1,7 @@
 Summary: POSIX regexp functions
 Name: librx
 Version: 1.5
-Release: 6%{?dist}
+Release: 8%{?dist}
 License: GPL
 URL: http://www.gnu.org/software/rx/rx.html
 Group: Applications/Text
@@ -10,7 +10,7 @@ Patch0: rx-1.5-shared.patch
 Patch1: rx-1.5-texinfo.patch
 Patch2: librx-1.5-libdir64.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires: texinfo
+BuildRequires: texinfo, libtool
 
 %description
 Rx is, among other things, an implementation of the interface
@@ -52,6 +52,7 @@ mkdir -p ${RPM_BUILD_ROOT}%{_includedir}
 make install DESTDIR=${RPM_BUILD_ROOT}
 install -m 644 doc/rx.info ${RPM_BUILD_ROOT}%{_infodir}
 rm -rf ${RPM_BUILD_ROOT}%{_libdir}/librx.la
+chmod -x ${RPM_BUILD_ROOT}%{_includedir}/rxposix.h
 
 %clean
 rm -rf ${RPM_BUILD_ROOT}
@@ -83,6 +84,13 @@ fi
 %{_libdir}/*.a
 
 %changelog
+* Mon Sep 11 2006 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-8
+- fix bz 200090
+
+* Mon Sep 11 2006 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-7
+- fix bz 197717
+- bump for FC-6
+
 * Tue Feb 28 2006 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-6
 - bump for FC-5
 
