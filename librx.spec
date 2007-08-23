@@ -1,8 +1,8 @@
 Summary: POSIX regexp functions
 Name: librx
 Version: 1.5
-Release: 8%{?dist}
-License: GPL
+Release: 9%{?dist}
+License: GPLv2+
 URL: http://www.gnu.org/software/rx/rx.html
 Group: Applications/Text
 Source0: ftp://ftp.gnu.org/gnu/rx/rx-%{version}.tar.bz2
@@ -84,6 +84,9 @@ fi
 %{_libdir}/*.a
 
 %changelog
+* Thu Aug 23 2007 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-9
+- fix license, rebuild for BuildID
+
 * Mon Sep 11 2006 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-8
 - fix bz 200090
 
