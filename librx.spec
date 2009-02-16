@@ -1,7 +1,7 @@
 Summary: POSIX regexp functions
 Name: librx
 Version: 1.5
-Release: 10%{?dist}
+Release: 11%{?dist}
 License: GPLv2+
 URL: http://www.gnu.org/software/rx/rx.html
 Group: Applications/Text
@@ -9,6 +9,7 @@ Source0: ftp://ftp.gnu.org/gnu/rx/rx-%{version}.tar.bz2
 Patch0: rx-1.5-shared.patch
 Patch1: rx-1.5-texinfo.patch
 Patch2: librx-1.5-libdir64.patch
+Patch3: rx-1.5-libtoolmode.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: texinfo, libtool
 
@@ -38,6 +39,7 @@ This package contains files needed for development with librx.
 %ifarch x86_64 ppc64 sparc64
 %patch2 -p1 -b .64bit
 %endif
+%patch3 -p1 -b .libtoolmode
 
 %build
 %configure
@@ -84,6 +86,9 @@ fi
 %{_libdir}/*.a
 
 %changelog
+* Mon Feb 16 2009 Tom "spot" Callaway <tcallawa@redhat.com> 1.5-11
+- pass modes to libtool
+
 * Tue Feb 19 2008 Fedora Release Engineering <rel-eng@fedoraproject.org> - 1.5-10
 - Autorebuild for GCC 4.3
 
