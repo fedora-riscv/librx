@@ -1,11 +1,13 @@
 Summary: POSIX regexp functions
 Name: librx
 Version: 1.5
-Release: 13%{?dist}.1
+Release: 14%{?dist}
 License: GPLv2+
 URL: http://www.gnu.org/software/rx/rx.html
 Group: Applications/Text
-Source0: ftp://ftp.gnu.org/gnu/rx/rx-%{version}.tar.bz2
+# Originally downloaded from ftp://ftp.gnu.org/gnu/rx/rx-1.5.tar.bz2
+# The FSF no longer offers this code.
+Source0: rx-%{version}.tar.bz2
 Patch0: rx-1.5-shared.patch
 Patch1: rx-1.5-texinfo.patch
 Patch2: librx-1.5-libdir64.patch
@@ -86,6 +88,9 @@ fi
 %{_libdir}/*.a
 
 %changelog
+* Wed Aug 19 2009 Tom "spot" Callaway <tcallawa@redhat.com> - 1.5-14
+- take URL out of Source0
+
 * Sat Jul 25 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.5-13.1
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_12_Mass_Rebuild
 
