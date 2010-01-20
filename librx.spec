@@ -56,6 +56,7 @@ mkdir -p ${RPM_BUILD_ROOT}%{_includedir}
 make install DESTDIR=${RPM_BUILD_ROOT}
 install -m 644 doc/rx.info ${RPM_BUILD_ROOT}%{_infodir}
 rm -rf ${RPM_BUILD_ROOT}%{_libdir}/librx.la
+rm -rf ${RPM_BUILD_ROOT}%{_libdir}/librx.a
 chmod -x ${RPM_BUILD_ROOT}%{_includedir}/rxposix.h
 
 %clean
@@ -85,9 +86,11 @@ fi
 %{_includedir}/*
 %{_infodir}/*
 %{_libdir}/*.so
-%{_libdir}/*.a
 
 %changelog
+* Wed Jan 20 2010 Tom "spot" Callaway <tcallawa@redhat.com> - 1.5-15
+- don't package static lib (resolves bz 556072)
+
 * Wed Aug 19 2009 Tom "spot" Callaway <tcallawa@redhat.com> - 1.5-14
 - take URL out of Source0
 
