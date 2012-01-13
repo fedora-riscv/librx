@@ -1,7 +1,7 @@
 Summary: POSIX regexp functions
 Name: librx
 Version: 1.5
-Release: 15%{?dist}
+Release: 16%{?dist}
 License: GPLv2+
 URL: http://www.gnu.org/software/rx/rx.html
 Group: Applications/Text
@@ -88,6 +88,9 @@ fi
 %{_libdir}/*.so
 
 %changelog
+* Fri Jan 13 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.5-16
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
+
 * Tue Feb 08 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.5-15
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
 
