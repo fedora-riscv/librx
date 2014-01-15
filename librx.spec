@@ -1,7 +1,7 @@
 Summary: POSIX regexp functions
 Name: librx
 Version: 1.5
-Release: 20%{?dist}
+Release: 21%{?dist}
 License: GPLv2+
 URL: http://www.gnu.org/software/rx/rx.html
 Group: Applications/Text
@@ -67,7 +67,7 @@ rm -rf ${RPM_BUILD_ROOT}
 %postun -p /sbin/ldconfig
 
 %post devel
-/sbin/install-info %{_infodir}/rx.info \ 
+/sbin/install-info %{_infodir}/rx.info \
     %{_infodir}/dir 2>/dev/null || :
 
 %postun devel
@@ -88,6 +88,10 @@ fi
 %{_libdir}/*.so
 
 %changelog
+* Wed Jan 15 2014 Jason L Tibbitts III <tibbs@math.uh.edu> - 1.5-21
+- Remove single trailing space in -devel post scriptlet which caused a file
+  named " " in / to appear on install.
+
 * Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.5-20
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
