@@ -1,3 +1,7 @@
+%if 0%{?rhel}
+%global power64 ppc64 ppc64p7 ppc64le
+%endif
+
 Summary: POSIX regexp functions
 Name: librx
 Version: 1.5
