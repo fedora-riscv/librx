@@ -1,7 +1,7 @@
 Summary: POSIX regexp functions
 Name: librx
 Version: 1.5
-Release: 19%{?dist}
+Release: 24%{?dist}
 License: GPLv2+
 URL: http://www.gnu.org/software/rx/rx.html
 Group: Applications/Text
@@ -38,7 +38,7 @@ This package contains files needed for development with librx.
 %setup -q -n rx-%{version}
 %patch0 -p1
 %patch1 -p1 -b .texipatch
-%ifarch x86_64 s390x ia64 ppc64 alpha sparc64 aarch64
+%ifarch x86_64 s390x ia64 %{power64} alpha sparc64 aarch64 
 %patch2 -p1 -b .64bit
 %endif
 %patch3 -p1 -b .libtoolmode
@@ -67,7 +67,7 @@ rm -rf ${RPM_BUILD_ROOT}
 %postun -p /sbin/ldconfig
 
 %post devel
-/sbin/install-info %{_infodir}/rx.info \ 
+/sbin/install-info %{_infodir}/rx.info \
     %{_infodir}/dir 2>/dev/null || :
 
 %postun devel
@@ -88,6 +88,22 @@ fi
 %{_libdir}/*.so
 
 %changelog
+* Sun Aug 17 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.5-24
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
+
+* Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.5-23
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+
+* Tue May 20 2014 Brent Baude <baude@us.ibm.com> - 1.5-22
+- Update 64bit arch list
+
+* Wed Jan 15 2014 Jason L Tibbitts III <tibbs@math.uh.edu> - 1.5-21
+- Remove single trailing space in -devel post scriptlet which caused a file
+  named " " in / to appear on install.
+
+* Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.5-20
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
+
 * Wed May 29 2013 Peter Robinson <pbrobinson@fedoraproject.org> 1.5-19
 - Update 64bit arch list
 
