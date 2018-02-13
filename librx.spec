@@ -12,7 +12,6 @@ Patch0: rx-1.5-shared.patch
 Patch1: rx-1.5-texinfo.patch
 Patch2: librx-1.5-libdir64.patch
 Patch3: rx-1.5-libtoolmode.patch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: texinfo, libtool
 
 %description
