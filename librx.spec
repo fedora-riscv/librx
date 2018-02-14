@@ -58,9 +58,6 @@ rm -rf ${RPM_BUILD_ROOT}%{_libdir}/librx.la
 rm -rf ${RPM_BUILD_ROOT}%{_libdir}/librx.a
 chmod -x ${RPM_BUILD_ROOT}%{_includedir}/rxposix.h
 
-%clean
-rm -rf ${RPM_BUILD_ROOT}
-
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
