@@ -73,11 +73,9 @@ if [ "$1" = 0 ]; then
 fi
 
 %files
-%defattr(-,root,root,-)
 %{_libdir}/*.so.*
 
 %files devel
-%defattr(-,root,root,-)
 %doc ANNOUNCE BUILDING COOKOFF rx/ChangeLog
 %{_includedir}/*
 %{_infodir}/*
