@@ -60,16 +60,6 @@ chmod -x ${RPM_BUILD_ROOT}%{_includedir}/rxposix.h
 
 %ldconfig_scriptlets
 
-%post devel
-/sbin/install-info %{_infodir}/rx.info \
-    %{_infodir}/dir 2>/dev/null || :
-
-%postun devel
-if [ "$1" = 0 ]; then
-  /sbin/install-info --delete %{_infodir}/rx.info \
-    %{_infodir}/dir 2>/dev/null || :
-fi
-
 %files
 %{_libdir}/*.so.*
 
