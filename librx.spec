@@ -4,7 +4,6 @@ Version: 1.5
 Release: 32%{?dist}
 License: GPLv2+
 URL: http://www.gnu.org/software/rx/rx.html
-Group: Applications/Text
 # Originally downloaded from ftp://ftp.gnu.org/gnu/rx/rx-1.5.tar.bz2
 # The FSF no longer offers this code.
 Source0: rx-%{version}.tar.bz2
@@ -22,7 +21,6 @@ library.
 
 %package devel
 Summary: POSIX regexp functions, developers library
-Group: Development/Libraries
 Requires: %{name} = %{version}-%{release}
 
 %description devel
