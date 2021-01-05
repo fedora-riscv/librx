@@ -12,6 +12,7 @@ Patch1: rx-1.5-texinfo.patch
 Patch2: librx-1.5-libdir64.patch
 Patch3: rx-1.5-libtoolmode.patch
 BuildRequires: texinfo, libtool
+BuildRequires: make
 
 %description
 Rx is, among other things, an implementation of the interface
